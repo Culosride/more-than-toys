@@ -1,6 +1,5 @@
 class Toy < ApplicationRecord
   has_many :bookings, dependent: :destroy
-  has_many :users, through: :bookings, dependent: :destroy
   belongs_to :user
 
   validates :description, :name, :cuteness, :price_daily, :location, :soul_taking_chance, presence: true
