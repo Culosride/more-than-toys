@@ -1,11 +1,7 @@
 class ToysController < ApplicationController
   before_action :select_toy, only: %i[show]
-  def home
-    authorize @toy
-  end
 
   def index
-    @toys = Toy.all
     @toys = policy_scope(Toy)
   end
 
@@ -23,7 +19,8 @@ class ToysController < ApplicationController
     @toy.user = current_user
     authorize @toy
     @toy.save
-    redirect_to toy_path(@toy)
+    raise
+    redirect_to root_path
   end
 
   # def edit
@@ -42,10 +39,10 @@ class ToysController < ApplicationController
   private
 
   def select_toy
-    @toy = Toy.find(params[:id])
+    @toy = Toy.find(params[:toy_id])
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :cuteness, :kid_friendly, :price_daily, :location)
+    params.require(:toy).permit(:name, :description, :cuteness, :kid_friendly, :price_daily, :location, :user_id)
   end
 end
