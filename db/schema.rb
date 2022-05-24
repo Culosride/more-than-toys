@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_153753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.date "start_at"
+    t.date "start_date"
     t.index ["toy_id"], name: "index_bookings_on_toy_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
