@@ -13,7 +13,9 @@ class ToysController < ApplicationController
   end
 
   def create
-
+    @toy = Toy.new(toy_params)
+    @toy.save
+    redirect_to toy_path(@toy)
   end
 
   private
@@ -23,6 +25,6 @@ class ToysController < ApplicationController
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :)
+    params.require(:toy).permit(:name, :description, :cuteness, :kid_friendly, :price_daily, :location)
   end
 end
