@@ -1,9 +1,14 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%# First f.input added for the specific model  %>
+    <%= f.input :username,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "username" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
