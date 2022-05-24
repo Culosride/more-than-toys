@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "toys#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  resources :toys, only: %i[new create show]
+  # get 'toys/:id', to: "toys#show", as: :toy
+  # get 'toys/new'
+  # get 'toys/create'
 end

@@ -5,4 +5,6 @@ class Toy < ApplicationRecord
   validates :description, :name, :cuteness, :price_daily, :location, :soul_taking_chance, presence: true
   validates :cuteness, :price_daily, :soul_taking_chance, numericality: true
   validates :name, length: { maximum: 14 }
+
+  CITIES = %w[berlin cagliari bogotà buenos_aires].freeze
 end

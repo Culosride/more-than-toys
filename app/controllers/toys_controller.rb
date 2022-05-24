@@ -1,46 +1,51 @@
 class ToysController < ApplicationController
-
-  #STILL NEEDS BASIC CONTROLLER ACTIONS / refined methods
-
+  before_action :select_toy, only: %i[show]
   def home
     authorize @toy
   end
 
   def index
+    @toys = Toy.all
     @toys = policy_scope(Toy)
   end
 
   def show
-    #before action thing
-    authorize @toy # Add this line
+    authorize @toy
   end
 
   def new
-    #Class instance first by Andrea
+    @toy = Toy.new
     authorize @toy
   end
 
   def create
+    @toy = Toy.new(toy_params)
     @toy.user = current_user
     authorize @toy
+    @toy.save
+    redirect_to toy_path(@toy)
   end
 
-  def edit
-    authorize @toy
-    @toy.user = current_user
+  # def edit
+  #   authorize @toy
+  #   @toy.user = current_user
+  # end
+
+  # def update
+  #   authorize @toy
+  # end
+
+  # def destroy
+  #   authorize @toy
+  # end
+
+  private
+
+  def select_toy
+    @toy = Toy.find(params[:id])
   end
 
-  def update
-    authorize @toy
+  def toy_params
+    params.require(:toy).permit(:name, :description, :cuteness, :kid_friendly, :price_daily, :location)
   end
-
-  def destroy
-    authorize @toy
-  end
-
-private
-
-# def authorize_toy
-#   authorize @toy
-# end
 end
