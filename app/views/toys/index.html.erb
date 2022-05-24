@@ -1,0 +1,20 @@
+<h1>Welcome! Browse our Cuty McCuteFace toys!</h1>
+  <%# <%= link_to "Add toy", new_toy_path, class: "btn btn-secondary m-3" %>
+
+<div class="d-flex justify-content-around">
+    <% @toys.each do |toy| %>
+      <%= link_to toy.name, toy_path(toy) %>
+      <%= toy.name %>
+      <%= toy.description %>
+      <%= toy.cuteness %>
+      <%= toy.price_daily %>
+      <%# <% end %>
+      <br>
+    <% end %>
+</div>
+
+<%= link_to "Sign in", new_user_session_path %>
+
+        <%# <% if toy.photo.attached? %>
+          <%# <%= cl_image_tag toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <%# <% end %>
