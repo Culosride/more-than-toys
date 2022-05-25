@@ -278,7 +278,6 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   capybara
-  date_wrapper
   debug
   devise
   dotenv-rails
