@@ -14,8 +14,9 @@
     <nav>
       <%= render "shared/navbar" %>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= render "shared/flashes" %>
+    <p class="notice"><%#= notice %></p>
+    <p class="alert"><%#= alert %></p>
   </body>
 </html>
