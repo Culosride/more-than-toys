@@ -1,0 +1,22 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #1edd88;
+  border: solid 5px #1fbe77e3;
+  transition: background 0.3s ease;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.btn {
+  font-family: Nunito;
+  font-style: italic;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
