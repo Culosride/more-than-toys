@@ -10,7 +10,7 @@
 
   <%= f.input :price_daily, as: :integer, placeholder: 'type 100 for 100€' %>
 
-  <%= f.input :location, collection: ["Berlin", "Cagliari", "Bogotà", "Buenos Aires"] %>
+  <%= f.input :location, collection: Toy::CITIES %>
 
   <%= f.input :soul_taking_chance, as: :integer  %>
 

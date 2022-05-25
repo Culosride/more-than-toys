@@ -6,5 +6,5 @@ class Toy < ApplicationRecord
   validates :cuteness, :soul_taking_chance, :price_daily, numericality: true
   validates :name, length: { maximum: 14 }
 
-  # $cities = %w[berlin cagliari bogotà buenos_aires].freeze floreba: let's delete --> included in form?
+  CITIES = ["Berlin", "Cagliari", "Bogotà", "Buenos Aires"].freeze
 end
