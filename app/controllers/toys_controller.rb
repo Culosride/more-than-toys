@@ -19,7 +19,7 @@ class ToysController < ApplicationController
     @toy.user = current_user
     authorize @toy
     @toy.save
-    redirect_to root_path
+    redirect_to toy_path(@toy)
   end
 
   # def edit
