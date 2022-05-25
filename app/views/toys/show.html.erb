@@ -23,3 +23,9 @@
     KID UNFRIENDLY
 
   <% end %> </p>
+
+<%# <%= button_to "Destroy this toy 🫡", @toy, method: :delete if policy(@toy).destroy? %> %>
+%>
+<% if policy(@toy).destroy? %>
+  <%= link_to "Delete", delete_toy_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+<% end %>
