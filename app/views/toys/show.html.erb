@@ -1,5 +1,3 @@
-<h1>Toys#show</h1>
-
 <p>Toy Name:  <%= @toy.name  %>  </p>
 <p>Description:  <%= @toy.description  %>  </p>
 <p>Location:  <%= @toy.location  %>  </p>
@@ -23,3 +21,5 @@
     KID UNFRIENDLY
 
   <% end %> </p>
+
+<%= link_to "Book", new_toy_booking_path(@toy), class: "btn btn-dark m-3" %>
