@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get "/dashboard", to: "pages#dashboard"
+  get "/dashboard/mytoys", to: "pages#mytoys", as: 'mytoys'
   delete 'toys/:id', to: 'toys#destroy', as: 'delete_toy'
 
   resources :toys, only: %i[new create show] do
