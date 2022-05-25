@@ -1,4 +1,4 @@
-class ToyPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -9,9 +9,13 @@ class ToyPolicy < ApplicationPolicy
     end
   end
 
-    # def index?
-    #   true
-    # end
+    def new
+      user
+    end
+
+    def index?
+      true
+    end
 
     def show?
       true
@@ -27,9 +31,9 @@ class ToyPolicy < ApplicationPolicy
     #   # user: the `current_user` signed in with Devise
     # end
 
-    # def destroy?
-    #   record.user == user
-    # end
+    def destroy?
+      record.user == user
+    end
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
     #   scope.all

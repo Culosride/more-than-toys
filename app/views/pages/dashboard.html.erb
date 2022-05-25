@@ -1,0 +1,10 @@
+<div class="container-fluid p-6 mt-5">
+  <div class="container">
+    <% @bookings.each do |booking| %>
+      <div class="d-flex bg-light p-3 justify-content-between">
+        <%= booking.price %>
+      </div>
+      <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+    <% end %>
+  </div>
+</div>>

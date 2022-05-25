@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root "toys#index"
 
   devise_for :users
-
+  get "/dashboard", to: "pages#dashboard"
   resources :toys, only: %i[new create show] do
-    resources :bookings, only: %i[new create destroy show]
+    resources :bookings, only: %i[new create show]
   end
+  resources :bookings, only: %i[destroy]
+
   # get 'toys/:id', to: "toys#show", as: :toy
   # get 'toys/new'
   # get 'toys/create'
