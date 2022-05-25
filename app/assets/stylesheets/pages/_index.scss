@@ -1,1 +1,13 @@
 // Import page-specific CSS files here.
+
+@import "home";
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  color: $light-gray;
+  padding: 20px;
+  text-align: center;
+}
+

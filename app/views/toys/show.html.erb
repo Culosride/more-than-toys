@@ -1,2 +1,28 @@
-<h1>Toys#show</h1>
-<p>Find me in app/views/toys/show.html.erb</p>
+<p>Toy Name:  <%= @toy.name  %>  </p>
+<p>Description:  <%= @toy.description  %>  </p>
+<p>Location:  <%= @toy.location  %>  </p>
+
+
+<p> <% if @toy.soul_taking_chance > 50 %>
+    Soul taking chance 😈
+  <% else %>
+    Soul taking chance 😇
+  <% end %>
+  <%= @toy.soul_taking_chance %> %
+</p>
+
+
+
+<p <% if @toy.kid_friendly == true %>
+    <%= 'style=color:green' %>>
+    KID FRIENDLY
+  <% else %>
+    <%='style=color:red' %>>
+    KID UNFRIENDLY
+
+  <% end %> </p>
+
+<% if policy(@toy).destroy? %>
+  <%= link_to "Delete", delete_toy_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+<% end %>
+<%= link_to "Book", new_toy_booking_path(@toy), class: "btn btn-dark m-3" %>
