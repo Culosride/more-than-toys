@@ -1,5 +1,5 @@
 class ToysController < ApplicationController
-  before_action :select_toy, only: %i[show]
+  before_action :select_toy, only: [:show, :destroy]
 
   def index
     @toys = policy_scope(Toy)
@@ -31,9 +31,11 @@ class ToysController < ApplicationController
   #   authorize @toy
   # end
 
-  # def destroy
-  #   authorize @toy
-  # end
+  def destroy
+    authorize @toy
+    @toy.destroy
+    redirect_to root_url, status: :see_other
+  end
 
   private
 
