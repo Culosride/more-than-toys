@@ -3,21 +3,16 @@
 
   <%= f.input :description %>
 
+  <%= f.input :cuteness, collection: 1..5 %>
 
-  <%= f.input :cuteness %>
-
-
-  <%= f.input :kid_friendly %>
+  <%= f.input :kid_friendly, as: :boolean %>
 
 
-  <%= f.input :price_daily %>
+  <%= f.input :price_daily, as: :integer, placeholder: 'type 100 for 100€' %>
 
+  <%= f.input :location, collection: ["Berlin", "Cagliari", "Bogotà", "Buenos Aires"] %>
 
-  <%= f.input :location %>
-
-
-  <%= f.input :soul_taking_chance %>
-
+  <%= f.input :soul_taking_chance, as: :integer  %>
 
   <%= f.submit %>
 <% end %>

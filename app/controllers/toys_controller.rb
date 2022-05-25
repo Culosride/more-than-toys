@@ -19,7 +19,6 @@ class ToysController < ApplicationController
     @toy.user = current_user
     authorize @toy
     @toy.save
-    raise
     redirect_to root_path
   end
 
@@ -39,10 +38,10 @@ class ToysController < ApplicationController
   private
 
   def select_toy
-    @toy = Toy.find(params[:toy_id])
+    @toy = Toy.find(params[:id])
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :cuteness, :kid_friendly, :price_daily, :location, :user_id)
+    params.require(:toy).permit(:name, :description, :cuteness, :soul_taking_chance, :kid_friendly, :price_daily, :location)
   end
 end
