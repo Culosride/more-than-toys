@@ -2,9 +2,9 @@ class Toy < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
 
-  validates :description, :name, :cuteness, :price_daily, :location, :soul_taking_chance, presence: true
-  validates :cuteness, :price_daily, :soul_taking_chance, numericality: true
+  validates :description, :name, :cuteness, :price_daily, :location, presence: true
+  validates :cuteness, :soul_taking_chance, :price_daily, numericality: true
   validates :name, length: { maximum: 14 }
 
-  CITIES = %w[berlin cagliari bogotà buenos_aires].freeze
+  CITIES = ["Berlin", "Cagliari", "Bogotà", "Buenos Aires"].freeze
 end
