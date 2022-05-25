@@ -10,8 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.toy = @toy
     @booking.save
-    raise
-    redirect_to toy_booking_path(@booking)
+    redirect_to root_path
   end
 
   def show
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:price, :date, :toy_id, :current_user)
+    params.require(:booking).permit(:price, :end_date, :start_date, :toy_id, :current_user)
   end
 
   def select_toy
