@@ -1,15 +1,14 @@
 <div class="container">
   <h1>Welcome to your dashboard</h1>
 </div>
-
 <div class="d-flex justify-content-around m-3">
   <div class="row">
     <div class="col-6">
       <br>
       <h3>Your bookings</h3>
       <br>
-      <div class="row">
-        <% @bookings.each do |booking| %>
+      <% @bookings.each do |booking| %>
+        <div class="row">
           <div class="col">
             <%= image_tag "https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800", height: 200, crop: :fill %>
           </div>
@@ -26,8 +25,8 @@
       <br>
       <h3>Your toys</h3>
       <br>
-      <div class="row">
-        <% @toys.each do |toy| %>
+      <% @toys.each do |toy| %>
+        <div class="row">
           <div class="col">
             <%= image_tag "https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800", height: 200, crop: :fill %>
           </div>
@@ -42,6 +41,9 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Homepage", root_path, class: "btn btn-secondary m-3" %>
-<%= link_to "Create new Toy", new_toy_path, class: "btn btn-secondary m-3" %>
+<p>
+  <%= link_to "Homepage", root_path, class: "btn btn-secondary m-3" %>
+</p>
+<p>
+  <%= link_to "Create new Toy", new_toy_path, class: "btn btn-secondary m-3" %>
+</p>
