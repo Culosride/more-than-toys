@@ -60,7 +60,7 @@ class ToysController < ApplicationController
       :soul_taking_chance,
       :kid_friendly,
       :price_daily,
-      :location
+      :address
     )
   end
 end
