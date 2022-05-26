@@ -1,18 +1,22 @@
-<%= simple_form_for @toy do |f| %>
-  <%= f.input :name %>
+<div class="d-flex justify-content-center">
+  <div class="container w-25 bg-light p-3">
+    <%= simple_form_for @toy do |f| %>
+      <%= f.input :name %>
 
-  <%= f.input :description %>
+      <%= f.input :description %>
 
-  <%= f.input :cuteness, collection: 1..5 %>
+      <%= f.input :cuteness, collection: 1..5 %>
 
-  <%= f.input :kid_friendly, as: :boolean %>
+      <%= f.input :kid_friendly, as: :boolean %>
 
 
-  <%= f.input :price_daily, as: :integer, placeholder: 'type 100 for 100€' %>
+      <%= f.input :price_daily, as: :integer, placeholder: 'type 100 for 100€' %>
 
-  <%= f.input :location, collection: Toy::CITIES %>
+      <%= f.input :location, collection: Toy::CITIES %>
 
-  <%= f.input :soul_taking_chance, as: :integer  %>
+      <%= f.input :soul_taking_chance, as: :integer  %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.button :submit, class: "btn btn-flat m-3" %>
+    <% end %>
+  </div>
+</div>
