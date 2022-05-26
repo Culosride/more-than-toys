@@ -1,6 +1,7 @@
 class Toy < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
+  has_one_attached :photo
 
   validates :description, :name, :cuteness, :price_daily, :address, presence: true
   validates :cuteness, :soul_taking_chance, :price_daily, numericality: true
