@@ -1,0 +1,59 @@
+.banner {
+  background-image: url("https://i.ytimg.com/vi/nYFK4YJMNx0/maxresdefault.jpg");
+  display: block;
+  background-size: cover;
+  padding: 0px 0px 0px 0px ;
+  width: 100vw;
+  height: 800px;
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
+}
+.banner h2 {
+  display: relative;
+  top: 0px;
+  right: 0;
+  font-weight: bolder;
+  font-size: 150px;
+  background: linear-gradient(90deg, rgba(255,134,0,1) 0%, rgba(255,0,187,1) 22%, rgba(73,164,210,1) 46%, rgba(214,225,48,1) 71%, rgba(33,255,0,1) 100%);
+  background-clip: text;
+  color: transparent;
+
+
+}
+
+.banner h1 {
+  display: relative;
+  top: 4000px;
+  right: 0;
+
+  color: white;
+  text-shadow: 1px 1px 3px rgb(143, 1, 143);
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  font-family: Nunito;
+  color: white;
+  text-shadow: 1px 1px 3px rgb(87, 7, 87);
+}
+
+.btn-home {
+  text-shadow: 1px 1px 5px rgb(87, 7, 87);
+  margin: 0 auto !important;
+  width: max-content;
+  display: block;
+}
+#title1{
+  padding-top: 0px !important;
+}
+
+#title2{
+  padding-top: 150px !important;
+}
+#title3{
+  padding-top: 120px !important;
+}
