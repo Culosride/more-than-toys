@@ -1,4 +1,4 @@
-<%# <div class="d-flex justify-content-around"> %>
+<div class="d-flex justify-content-around">
   <div class="cards">
     <% @toys.each do |toy| %>
       <div class="card-trip">
@@ -7,21 +7,32 @@
         <% end %>
 
         <div class="card-trip-infos">
+          <div>
             <h2><%= link_to toy.name, toy_path(toy) %></h2>
-            <p><%= toy.cuteness %></p>
-            <p><%= toy.description %></p>
+            <p> Cuteness: <%= toy.cuteness %></p>
+            <p> Kid Friendly? <%= toy.kid_friendly ? "🟢" : "❌"  %></p>
 
-          <div class="card-trip-pricing">
-            <h2 ><%= toy.price_daily %>€</h2>
-            <p> /day </p>
+            <p <%= toy.soul_taking_chance > 50 ? "style=color:red" : "style=color: green" %>>HELLO </p>
+            <%# Soul taking chance 😈 %>
+
+            <p><%= toy.description %></p>
           </div>
 
-          <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-          <% if current_user != toy.user %>
-            <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-dark m-3" %>
-          <% end %>
+          <div class="card-trip-pricing">
+            <div>
+              <h2 ><%= toy.price_daily %>€ / day</h2>
+              <% if current_user != toy.user %>
+                <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-dark m-3" %>
+              <% elsif policy(toy).destroy? %>
+                <br>
+                <p>This is yours</p>
+                <%# <%= link_to "Delete", delete_toy_path(toy), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+              <% end %>
+            </div>
+          </div>
+
         </div>
       </div>
     <% end %>
   </div>
-<%# </div> %>
+</div>
