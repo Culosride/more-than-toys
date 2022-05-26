@@ -7,17 +7,21 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Creating 2 fake users...'
+User.delete_all
+Toy.delete_all
+
 2.times do
-  user = User.new(
+  @user = User.new(
     username: Faker::Name.first_name,
     email: Faker::Internet.email,
     password: "123456"
   )
-  user.save!
+  @user.save!
 end
 puts 'Finished!'
 
 puts 'Creating 10 fake toys...'
+
 10.times do
   toy = Toy.new(
     name: Faker::Creature::Animal.name,
@@ -25,9 +29,9 @@ puts 'Creating 10 fake toys...'
     cuteness: rand(5..10),
     kid_friendly: true,
     price_daily: rand(1..99),
-    location: Toy::CITIES.sample,
+    address: Toy::CITIES.sample,
     soul_taking_chance: rand(95..100),
-    user_id: rand(1..2)
+    user_id: @user[:id]
   )
   toy.save!
 end

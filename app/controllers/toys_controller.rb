@@ -7,6 +7,14 @@ class ToysController < ApplicationController
 
   def show
     authorize @toy
+    @marker = {
+      lat: @toy.latitude,
+      lng: @toy.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { toy: @toy }),
+      image_url: helpers.asset_url("logo.png")
+    }
+    @markers = []
+    @markers << @marker
   end
 
   def new
@@ -44,6 +52,6 @@ class ToysController < ApplicationController
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :cuteness, :soul_taking_chance, :kid_friendly, :price_daily, :location)
+    params.require(:toy).permit(:name, :description, :cuteness, :soul_taking_chance, :kid_friendly, :price_daily, :address)
   end
 end

@@ -2,9 +2,12 @@ class Toy < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
 
-  validates :description, :name, :cuteness, :price_daily, :location, presence: true
+  validates :description, :name, :cuteness, :price_daily, :address, presence: true
   validates :cuteness, :soul_taking_chance, :price_daily, numericality: true
   validates :name, length: { maximum: 14 }
 
-  CITIES = ["Berlin", "Cagliari", "Bogotà", "Buenos Aires"].freeze
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  CITIES = ["Berlin, Karl-Marx-strasse 127", "Milano, via Tortona 5", "Bogotà, Calle 127", "Hamburg, Horner landstrasse 125"].freeze
 end
