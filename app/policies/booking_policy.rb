@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
     def new
-      user
+      true
     end
 
     def index?
@@ -22,7 +22,7 @@ class BookingPolicy < ApplicationPolicy
     end
 
     def create?
-      user
+      record.user = user
     end
 
     # def update?

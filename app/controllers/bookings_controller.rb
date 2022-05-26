@@ -13,11 +13,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.toy = @toy
-    @booking.price = @toy.price_daily * rand(3..10)
-    authorize @booking
-    @booking.save
-    redirect_to dashboard_path
+    if current_user != @toy.user
+      @booking.toy = @toy
+      @booking.price = @toy.price_daily * rand(3..10)
+      authorize @booking
+      @booking.save
+      redirect_to dashboard_path
+    end
   end
 
   def destroy
