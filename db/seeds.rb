@@ -34,7 +34,7 @@ puts 'Creating 10 fake toys...'
     soul_taking_chance: rand(95..100),
     user_id: @user[:id]
   )
-  toy.photo.attach(io: File.open(Rails.root.join("app/assets/images/toys/#{rand(1..7)}.jpeg")),
+  toy.photo.attach(io: File.open(Rails.root.join("app/assets/images/toys/#{rand(1..10)}.jpeg")),
                   filename: 'toy.jpeg')
   toy.save!
 end
