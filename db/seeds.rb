@@ -22,6 +22,7 @@ puts 'Creating 10 fake toys...'
   toy = Toy.new(
     name: Faker::Creature::Animal.name,
     description: "A beautiful harmless toy for your kids",
+    # photo: File.open(File.join(Rails.root, "/app/assets/images/toys/#{rand(1..7)}.jpeg")),
     cuteness: rand(5..10),
     kid_friendly: true,
     price_daily: rand(1..99),
@@ -29,6 +30,8 @@ puts 'Creating 10 fake toys...'
     soul_taking_chance: rand(95..100),
     user_id: rand(1..2)
   )
+  toy.photo.attach(io: File.open(Rails.root.join("app/assets/images/toys/#{rand(1..7)}.jpeg")),
+                  filename: 'toy.jpeg')
   toy.save!
 end
 puts 'Finished!'
