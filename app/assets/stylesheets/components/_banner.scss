@@ -4,7 +4,7 @@
   background-size: cover;
   padding: 0px 0px 0px 0px ;
   width: 100vw;
-  height: 800px;
+  height: 730px;
   // background-position: center center;
   // background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -19,9 +19,9 @@
   background: linear-gradient(90deg, rgba(255,134,0,1) 0%, rgba(255,0,187,1) 22%, rgba(73,164,210,1) 46%, rgba(214,225,48,1) 71%, rgba(33,255,0,1) 100%);
   background-clip: text;
   color: transparent;
-
-
+  z-index: 1;
 }
+
 
 .banner h1 {
   display: relative;
