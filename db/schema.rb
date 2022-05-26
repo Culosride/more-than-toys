@@ -60,11 +60,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_100208) do
     t.integer "cuteness"
     t.boolean "kid_friendly"
     t.integer "price_daily"
-    t.string "location"
+    t.string "address"
     t.integer "soul_taking_chance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_toys_on_user_id"
   end
 
