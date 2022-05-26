@@ -1,23 +1,43 @@
-
 <div class="banner">
+  <div id="title1">
+    <H2 class="d-flex justify-content-center"> MORE THAN TOYS</H2>
+  </div>
+  <div id="title2">
+    <h1 class="text-end">"I cAn FiNnAlY TaLk To GrAnNy!"</h1>
+  </div>
+  <div id="title3">
+   <h4 class="d-flex justify-content-center">Thanks more than toys!!!!!!</h4>
+  </div>
 
-  <h1 class="text-end">"I cAn FiNnAlY TaLk tO mY GrAnNy!"</h1>
-  <p class="text-end">Thanks more than toys!!!!!!</p>
 
 
-  <%# <div class="search-field">
+  <div class="input-group d-flex justify-content-center">
+    <%= form_tag toys_path, method: :get, class: "form-outline d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-form",
+        placeholder: "Whats your location Q.T.?"
+      %>
+      <%= submit_tag "GO!", class: "btn search-btn" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+<%# <div class="search-field">
     <a class="btn btn-flat btn-home" href="/">StArT HeRe</a>
   </div> %>
-
+<%#
   <div class="input-group d-flex justify-content-center">
     <div class="form-outline">
       <input id="search-input" type="search" id="form1" class="form-control search-form" value="What's Your locash QT?" />
       <label class="form-label" for="form1"> </label>
     </div>
-    <button id="search-button" type="button" class="btn search-btn">
+    <button id="search-button" type="button" class="btn search-btn" href="/">
       <i class="fas fa-search"> GO!</i>
     </button>
-  </div>
-
-
-</div>
+  </div> %>

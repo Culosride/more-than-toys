@@ -1,6 +1,6 @@
 .search-form{
   color: white;
-
+  width: 30vw;
   padding: 8px 24px;
   border-radius: 10px;
   background: #b9ffe0;
@@ -10,7 +10,7 @@
   margin-top: 30px;
   font-family: Nunito;
   font-style: italic;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
   textarea{
     color: #ff0000;
@@ -25,10 +25,13 @@
   background: #1edd88;
   border: solid 5px #1fbe77e3;
   transition: background 0.3s ease;
-  margin-left: 30px;
+  margin-left: -20px;
   margin-top: 30px;
   font-family: Nunito;
   font-style: italic;
   font-size: 18px;
   font-weight: 700;
+}
+.form-outline{
+margin-bottom: 40px;
 }
