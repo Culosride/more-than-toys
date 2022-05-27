@@ -13,7 +13,7 @@
 
   <body>
     <div class="page-container">
-      <% unless current_page? != root_path  %>
+      <% unless current_page?(root_path) %>
       <nav>
         <%= render "shared/navbar" %>
       </nav>
@@ -21,7 +21,7 @@
       <div class="content-container">
        <%= yield %>
       </div>
-       <% unless current_page? != root_path  %>
+       <% unless current_page?(root_path) %>
       <footer class="footer-container" >
             <%= render "shared/footer" %>
       </footer>
