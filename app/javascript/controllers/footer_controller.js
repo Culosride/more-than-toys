@@ -7,10 +7,10 @@ export default class extends Controller {
   }
 
   updateFooter() {
-    if (window.scrollY >= 200) {
-      this.element.classList.add("footer")
-    } else {
-      this.element.classList.remove("footer")
-    }
+    // if (window.scrollY >= 200) {
+    //   this.element.classList.add("footer")
+    // } else {
+    //   this.element.classList.remove("footer")
+    // }
   }
 }

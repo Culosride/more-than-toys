@@ -8,7 +8,7 @@
 
         <div class="card-trip-infos">
           <div>
-            <h2><%= link_to toy.name, toy_path(toy) %></h2>
+            <h2><%= link_to toy.name.capitalize, toy_path(toy) %></h2>
             <p> Cuteness: <%= "★" * toy.cuteness + "☆" * ((toy.cuteness - 5).abs) %>  </p>
 
             <p>  <%= toy.kid_friendly ? "For kids ✔" : "Not for kids ❌"  %></p>
