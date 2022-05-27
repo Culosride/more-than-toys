@@ -13,3 +13,11 @@
 @import "components/button";
 @import "components/map";
 @import "pages/index";
+@import "components/footer";
+@import "components/form";
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}

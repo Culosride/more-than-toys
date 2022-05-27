@@ -3,17 +3,32 @@
     <% @toys.each do |toy| %>
       <div class="card-trip">
         <%= link_to toy_path(toy) do %>
-          <%= image_tag "https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800", height: 300, crop: :fill %>
+          <%= cl_image_tag toy.photo.key, height: 300, width: 400, crop: :fill, alt: toy.name %>
         <% end %>
-        <%# <img src="https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcGV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800" /> %>
+
         <div class="card-trip-infos">
           <div>
-            <h2><%= link_to toy.name.capitalize, toy_path(toy) %></h2>
-            <p><%= toy.cuteness %></p>
-            <p><%= toy.description %></p>
+            <h2><%= link_to toy.name, toy_path(toy) %></h2>
+            <p> Cuteness: <%= "★" * toy.cuteness + "☆" * ((toy.cuteness - 5).abs) %>  </p>
+
+            <p>  <%= toy.kid_friendly ? "For kids ✔" : "Not for kids ❌"  %></p>
+
+            <p>"<%= toy.description %>"</p>
           </div>
-          <h2 class="card-trip-pricing"><%= toy.price_daily %> €/day</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+
+          <div class="card-trip-pricing">
+            <div>
+              <h2 ><%= toy.price_daily %>€ / day</h2>
+              <% if current_user != toy.user %>
+                <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-dark m-3" %>
+              <% elsif policy(toy).destroy? %>
+                <br>
+                <p style='font-weight: bold'>This is yours</p>
+                <%# <%= link_to "Delete", delete_toy_path(toy), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+              <% end %>
+            </div>
+          </div>
+
         </div>
       </div>
     <% end %>

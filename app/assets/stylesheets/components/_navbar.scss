@@ -4,6 +4,7 @@
   padding: 20px;
   margin-bottom: 15px;
   font-family: Nunito;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,7 +13,10 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 80px;
+  width: 90px;
+  position: absolute;
+  margin-top: -28px;
+  margin-left: 5px;
 }
 
 .nav-link {
@@ -20,15 +24,29 @@
   font-weight: 700;
   font-style: italic;
   color: white;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .dropdown-menu {
   background-color: $t-yellow-1;
   border: solid 5px $t-yellow-2;
   border-radius: 20px;
+
 }
 
 .dropdown-item {
   font-size: 20px;
+}
+
+#marginkill{
+ padding: 0px !important;
+}
+
+nav{
+  position: sticky;
+
+  width: 100vw;
+  height: 10;
+  top: 0px;
+  z-index: 99;
 }

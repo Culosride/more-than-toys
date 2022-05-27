@@ -1,5 +1,7 @@
-<h2>Sign up</h2>
-
+<br>
+<div class="d-flex justify-content-center">
+  <div class="d-flex flex-column  create-form">
+<h1 class="login-h1">Join us!</h1>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
@@ -23,8 +25,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"btn-flat m-0" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
