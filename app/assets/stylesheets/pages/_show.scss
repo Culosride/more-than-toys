@@ -1,0 +1,104 @@
+.description {
+  background-color: $gray;
+  padding: 12px;
+}
+
+.show-container {
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.map-show {
+  border: 20px solid #E1B619;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  width: 600px;
+  height: 370px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.simple_form.new_booking {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-label {
+    display: none;
+  }
+
+  .optional {
+    margin-bottom: 0 !important;
+  }
+}
+
+.image-show {
+  border: 20px solid #E1B619;
+  border-radius: 30px;
+  width: 600px;
+  height: 680px;
+  // padding: 20px;
+}
+
+.btn-book {
+  color: white !important;
+  padding: 8px 24px ;
+  border-radius: 10px;
+  background: #e118e1 !important ;
+  border: solid 5px #b810b8 !important;
+  transition: background 0.3s ease;
+
+  font-family: Nunito !important;
+  font-style: italic !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+
+}
+
+.purple-line {
+  position: absolute;
+  width: 90%;
+  z-index: 2;
+  height: 20px;
+  border-radius: 20px;
+  background: $t-purple-2;
+  top: 50%;
+  box-shadow: 4px 3px 4px 0px rgba(0, 0, 0, .4);
+}
+
+.h3-title {
+  z-index: 10;
+  position: relative;
+  top: 0;
+  margin-left: 48px;
+}
+
+.toy-name {
+  position: relative;
+  margin-left: 24px;
+}
+
+.color-box {
+  background-position-y: center;
+  padding-top: 40px;
+  height: 105%;
+}
+
+.content-left {
+  margin-right: 60px;
+}
+
+.toy-description {
+  font-family: $body-font;
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px pink;
+  margin-bottom: 65px;
+  margin-left: 24px;
+}

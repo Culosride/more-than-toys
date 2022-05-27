@@ -6,6 +6,8 @@ class ToysController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    authorize @booking
     authorize @toy
     @marker = {
       lat: @toy.latitude,
