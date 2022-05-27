@@ -1,8 +1,8 @@
 .banner {
-  background-image: url("https://i.ytimg.com/vi/nYFK4YJMNx0/maxresdefault.jpg");
+  background-image: url("banner_background");
   display: block;
   background-size: cover;
-  padding: 0px 0px 0px 0px ;
+  padding: 0px 0px 0px 0px;
   width: 100vw;
   height: 750px;
   // background-position: center center;
@@ -10,13 +10,14 @@
   // background-attachment: fixed;
   // background-size: cover;
 }
+
 .banner h2 {
   display: relative;
   top: 0px;
   right: 0;
   font-weight: bolder;
   font-size: 150px;
-  background: linear-gradient(90deg, rgba(255,134,0,1) 0%, rgba(255,0,187,1) 22%, rgba(73,164,210,1) 46%, rgba(214,225,48,1) 71%, rgba(33,255,0,1) 100%);
+  background: linear-gradient(90deg, rgba(255, 134, 0, 1) 0%, rgba(255, 0, 187, 1) 22%, rgba(73, 164, 210, 1) 46%, rgba(214, 225, 48, 1) 71%, rgba(33, 255, 0, 1) 100%);
   background-clip: text;
   color: transparent;
   z-index: 1;
@@ -45,13 +46,15 @@
   width: max-content;
   display: block;
 }
-#title1{
+
+#title1 {
   padding-top: 0px !important;
 }
 
-#title2{
+#title2 {
   padding-top: 270px !important;
 }
-#title3{
+
+#title3 {
   padding-top: 30px !important;
 }
