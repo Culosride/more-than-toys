@@ -9,11 +9,9 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= link_to toy.name, toy_path(toy) %></h2>
-            <p> Cuteness: <%= toy.cuteness %></p>
-            <p> Kid Friendly? <%= toy.kid_friendly ? "🟢" : "❌"  %></p>
+            <p> Cuteness: <%= "★" * toy.cuteness + "☆" * ((toy.cuteness - 5).abs) %>  </p>
 
-            <%# <p <%= toy.soul_taking_chance > 50 ? "style=color:red" : "style=color: green" >HELLO </p> %>
-            <%# Soul taking chance 😈 %>
+            <p>  <%= toy.kid_friendly ? "For kids ✔" : "For kids X"  %></p>
 
             <p><%= toy.description %></p>
           </div>
