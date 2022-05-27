@@ -11,9 +11,9 @@
             <h2><%= link_to toy.name, toy_path(toy) %></h2>
             <p> Cuteness: <%= "★" * toy.cuteness + "☆" * ((toy.cuteness - 5).abs) %>  </p>
 
-            <p>  <%= toy.kid_friendly ? "For kids ✔" : "For kids X"  %></p>
+            <p>  <%= toy.kid_friendly ? "For kids ✔" : "Not for kids ❌"  %></p>
 
-            <p><%= toy.description %></p>
+            <p>"<%= toy.description %>"</p>
           </div>
 
           <div class="card-trip-pricing">
@@ -23,7 +23,7 @@
                 <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-dark m-3" %>
               <% elsif policy(toy).destroy? %>
                 <br>
-                <p>This is yours</p>
+                <p style='font-weight: bold'>This is yours</p>
                 <%# <%= link_to "Delete", delete_toy_path(toy), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
               <% end %>
             </div>
