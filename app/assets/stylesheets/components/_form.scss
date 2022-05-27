@@ -1,0 +1,24 @@
+.create-form {
+  background-color: $t-yellow-1;
+  padding: 40px 50px;
+  border: solid 5px $t-yellow-2;
+  border-radius: 30px;
+  font-family: Roboto, Helvetica, Arial;
+  font-weight: 400;
+  font-size: 1.2em;
+  width: 500px;
+  max-width: 700px;
+}
+
+#submit-button {
+  margin-left: 0px;
+}
+
+.link-deco {
+  color: $t-purple-2;
+  margin-top: 5px;
+}
+
+.login-h1 {
+  color: $t-purple-1
+}
