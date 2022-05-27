@@ -13,7 +13,4 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create show]
   end
   resources :bookings, only: %i[destroy]
-  # get 'toys/:id', to: "toys#show", as: :toy
-  # get 'toys/new'
-  # get 'toys/create'
 end

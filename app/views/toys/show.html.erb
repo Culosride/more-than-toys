@@ -1,40 +1,25 @@
-<div class="container">
-  <div class="row p-3">
-    <h3 class="mb-5"><%= @toy.name.capitalize  %></h3>
-    <div class="body d-flex col-12 col-lg-8 h-50">
-      <div class="container">
-        <%= cl_image_tag @toy.photo.key, width: 400, crop: :fill %>
+<div class="color-box" style="background-image: url('<%= asset_url("toys/show_bg.png")%>');"   >
+  <div class="container show-container justify-content-around">
+    <div class="content-left">
+      <div class="toy-name">
+        <h3 class="mb-3 h3-title"><%= @toy.name.capitalize  %></h3>
+        <div class="purple-line"></div>
       </div>
-      <div class="container description">
-        <p><%= @toy.description %></p>
-        <p>Location:  <%= @toy.address %></p>
-        <p> <% if @toy.soul_taking_chance > 50 %>
-            Soul taking chance 😈
-          <% else %>
-            Soul taking chance 😇
-          <% end %>
-          <%= @toy.soul_taking_chance %>
-          <p <% if @toy.kid_friendly == true %>
-            <%= 'style=color:green' %>>
-            KID FRIENDLY
-          <% else %>
-            <%='style=color:red' %>
-            KID UNFRIENDLY
-          <% end %> </p>
-      </div>
-    </div>
-    <div class="col-12 col-lg-4">
-      <div style="width: 500px; height: 100%;"
+      <p class="toy-description"><%= @toy.description %></p>
+      <div class="map-show"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+      <% if policy(@toy).destroy? %>
+        <%= link_to "Delete", delete_toy_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+      <% end %>
+      <% if current_user != @toy.user %>
+        <%= render 'form_book', booking: @booking, toy: @toy %>
+      <% end %>
+    </div>
+    <div class="">
+      <%= cl_image_tag @toy.photo.key, width: 400, crop: :fill, class: "image-show" %>
     </div>
   </div>
 </div>
-<% if policy(@toy).destroy? %>
-  <%= link_to "Delete", delete_toy_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
-<% end %>
-<% if current_user != @toy.user %>
-  <%= link_to "Book", new_toy_booking_path(@toy), class: "btn btn-dark m-3" %>
-<% end %>
