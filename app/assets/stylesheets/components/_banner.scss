@@ -4,7 +4,7 @@
   background-size: cover;
   padding: 0px 0px 0px 0px;
   width: 100vw;
-  height: 750px;
+  height: 100%;
   // background-position: center center;
   // background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -33,6 +33,15 @@
   font-weight: bold;
 }
 
+.banner h4 {
+  display: relative;
+  right: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .banner p {
   font-size: 20px;
   font-family: Nunito;
@@ -51,10 +60,10 @@
   padding-top: 0px !important;
 }
 
-#title2 {
-  padding-top: 270px !important;
+#title2{
+  padding-top: 290px !important;
 }
-
-#title3 {
-  padding-top: 30px !important;
+#title3{
+  padding-top: 70px !important;
+  padding-bottom: 00px !important;
 }

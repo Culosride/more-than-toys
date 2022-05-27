@@ -21,7 +21,7 @@
             <div>
               <h2 ><%= toy.price_daily %>€ / day</h2>
               <% if current_user != toy.user %>
-                <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-dark m-3" %>
+                <%= link_to "Book", new_toy_booking_path(toy), class: "btn btn-pur  "   %>
               <% elsif policy(toy).destroy? %>
                 <br>
                 <p style='font-weight: bold'>This is yours</p>

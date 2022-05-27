@@ -19,7 +19,7 @@
                   <p> <%= "You booked this cute toy: #{booking.toy.name}" %> </p>
                   <p><%= "»  Total price: #{booking.price} €" %></p>
                   <p><%= "»  For these dates: #{booking.start_date} - #{booking.end_date}." %></p>
-              <p><%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %></p>
+              <p><%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-red m-3" %></p>
             </div>
           <% end %>
       </div>
