@@ -9,6 +9,13 @@
   margin-top: 30px;
 }
 
+red
+// #ff0700;
+// #d80d07;
+
+purple
+// background: #e118e1;
+// border: solid 5px #b810b8;
 .btn {
   font-family: Nunito;
   font-style: italic;
@@ -23,4 +30,61 @@
 
 .btn-corners {
   border-radius: 0px 10px 10px 0px;
+}
+
+.btn-pur{
+  color: white !important;
+  padding: 8px 24px ;
+  border-radius: 10px;
+  background: #e118e1 !important ;
+  border: solid 5px #b810b8 !important;
+  transition: background 0.3s ease;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-family: Nunito !important;
+  font-style: italic !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  margin-top: 100px !important;
+
+}
+.btn-pur:hover {
+  background: #cb11cb;
+  color: white;
+}
+.btn-red{
+  color: white !important;
+  padding: 8px 24px ;
+  border-radius: 10px;
+  background: #ff0700 !important ;
+  border: solid 5px #d80d07 !important;
+  transition: background 0.3s ease;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-family: Nunito !important;
+  font-style: italic !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+}
+.btn-red:hover {
+  background: #e30e06;
+  color: white;
+}
+.btn-yell{
+  color: white !important;
+  padding: 8px 24px ;
+  border-radius: 10px;
+  background: #ff0700 !important ;
+  border: solid 5px #d80d07 !important;
+  transition: background 0.3s ease;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-family: Nunito !important;
+  font-style: italic !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+}
+.btn-yell:hover {
+  background: #d80d07;
+  color: white;
 }
