@@ -1,33 +1,36 @@
 <div class="container">
   <div class="row p-3">
-    <h3 class="my-5"><%= @toy.name.capitalize  %></h3>
-    <div class="col-12 col-lg-8">
-      <p><%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %></p>
-      <p>Description:  <%= @toy.description  %>  </p>
-      <p>Location:  <%= @toy.address  %>  </p>
-      <p> <% if @toy.soul_taking_chance > 50 %>
-          Soul taking chance 😈
-        <% else %>
-          Soul taking chance 😇
-        <% end %>
-        <%= @toy.soul_taking_chance %> %
-        <p <% if @toy.kid_friendly == true %>
+    <h3 class="mb-5"><%= @toy.name.capitalize  %></h3>
+    <div class="body d-flex col-12 col-lg-8 h-50">
+      <div class="container">
+        <%= cl_image_tag @toy.photo.key, width: 400, crop: :fill %>
+      </div>
+      <div class="container description">
+        <p><%= @toy.description %></p>
+        <p>Location:  <%= @toy.address %></p>
+        <p> <% if @toy.soul_taking_chance > 50 %>
+            Soul taking chance 😈
+          <% else %>
+            Soul taking chance 😇
+          <% end %>
+          <%= @toy.soul_taking_chance %>
+          <p <% if @toy.kid_friendly == true %>
             <%= 'style=color:green' %>>
-          KID FRIENDLY
-        <% else %>
-          <%='style=color:red' %>>
-          KID UNFRIENDLY
-        <% end %> </p>
-    </p>
-  </div>
-  <div class="col-12 col-lg-4">
-    <div style="width: 500px; height: 500px;"
+            KID FRIENDLY
+          <% else %>
+            <%='style=color:red' %>
+            KID UNFRIENDLY
+          <% end %> </p>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div style="width: 500px; height: 100%;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
-</div>
 </div>
 <% if policy(@toy).destroy? %>
   <%= link_to "Delete", delete_toy_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>

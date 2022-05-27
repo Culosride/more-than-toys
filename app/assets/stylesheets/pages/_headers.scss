@@ -8,7 +8,29 @@ h1 {
 }
 
 h3 {
-  font-family: $headers-font;
-  font-size: 40px;
+  // -webkit-text-stroke: 2px $light-gray;
+  text-shadow:
+    2px 2px 0 $light-gray ,
+    -2px -2px 0 $light-gray ,
+    2px -2px 0 $light-gray ,
+    -2px 2px 0 $light-gray ,
+    2px 2px 0 $light-gray,
+    0 1px 0 #ccc,
+    0 2px 0 #ccc,
+    0 3px 0 #ccc,
+    0 4px 0 #ccc,
+    0 5px 0 #ccc,
+    0 6px 0 #ccc;
   color: $t-yellow-1;
+  paint-order: stroke fill;
+  font-size: 80px;
+  transition: 0.5s;
+  font-family: $headers-font;
 }
+
+// h3:hover {
+//   -webkit-text-stroke: 2px $light-gray;
+//       0 9px 0 #ccc, 0 10px 0 #ccc,
+//       0 11px 0 #ccc, 0 12px 0 #ccc,
+//       // 0 20px 30px rgba(0, 0, 0, 0.5);
+// }
