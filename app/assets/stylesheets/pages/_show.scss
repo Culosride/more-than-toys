@@ -44,6 +44,21 @@
   // padding: 20px;
 }
 
+.btn-book {
+  color: white !important;
+  padding: 8px 24px ;
+  border-radius: 10px;
+  background: #e118e1 !important ;
+  border: solid 5px #b810b8 !important;
+  transition: background 0.3s ease;
+
+  font-family: Nunito !important;
+  font-style: italic !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+
+}
+
 .purple-line {
   position: absolute;
   width: 90%;
