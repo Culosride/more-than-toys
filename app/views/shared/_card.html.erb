@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-around">
   <div class="cards">
     <% @toys.each do |toy| %>
+    
       <div class="card-trip">
         <%= link_to toy_path(toy) do %>
           <%= cl_image_tag toy.photo.key, height: 300, width: 400, crop: :fill, alt: toy.name %>

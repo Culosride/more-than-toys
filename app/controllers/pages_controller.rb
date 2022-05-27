@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def dashboard
     @toys = current_user.toys
     @bookings = current_user.bookings
+    # @bookedtoys = bookings.toys
   end
 
   def mytoys

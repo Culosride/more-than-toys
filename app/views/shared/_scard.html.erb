@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-around">
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <div class="card-trip">
+        <%= link_to booking_path(booking) do %>
+          <%= cl_image_tag booking.toy.photo.key, height: 300, width: 400, crop: :fill, alt: booking.toy.name %>
+        <% end %>
+
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to booking.toy.name, booking_path(booking) %></h2>
+            <p> Cuteness: <%= "★" * booking.cuteness + "☆" * ((booking.cuteness - 5).abs)  </p> %>
+
+            <p>  <%= booking.kid_friendly ? "For kids ✔" : "Not for kids ❌" </p> %>
+
+            <p>"<%= booking.description %>"</p>
+          </div>
+
+          <%# <div class="card-trip-pricing">
+            <div>
+              <h2 ><%= booking.price_daily %>€ / day</h2>
+              <%# <% if current_user != booking.user %>
+                <%# <%= link_to "Book", new_booking_booking_path(booking), class: "btn btn-dark m-3" %> %>
+              <%# <% elsif policy(booking).destroy? %> %> %> %>
+                <%# <br> %>
+                <%# <p style='font-weight: bold'>This is yours</p> %>
+                <%# <%= link_to "Delete", delete_booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger m-3" %>
+              <%# <% end %> %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
